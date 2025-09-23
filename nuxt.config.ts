@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  ui:{
+    fonts:false
+  },
+
   css: ['~/assets/css/main.css'],
 
   content: {
