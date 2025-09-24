@@ -45,7 +45,7 @@ jobs:
 
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./doc_build
+          path: ./.output
 
   deploy:
     needs: build
