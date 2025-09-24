@@ -12,7 +12,8 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt Docs Template'
+    siteName: 'Turborepo 中文文档',
+    description: 'Turborepo 中文文档，Turborepo 是一个用于构建和缓存 JavaScript 和 TypeScript 项目的工具，它可以帮助你在开发过程中快速、可靠地构建和测试你的项目。',
   },
   header: {
     title: '',
@@ -26,9 +27,14 @@ export default defineAppConfig({
     colorMode: true,
     links: [{
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt-ui-templates/docs',
+      'to': 'https://github.com/xiaoLangtou/turborepo-zh-docs',
       'target': '_blank',
       'aria-label': 'GitHub'
+    }, {
+      'label': '英文文档',
+      'to': 'https://turborepo.com/docs',
+      'target': '_blank',
+      'aria-label': '英文文档'
     }]
   },
   footer: {
@@ -55,16 +61,16 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-ui-templates/docs/edit/main/content',
+      edit: 'https://github.com/xiaoLangtou/turborepo-zh-docs/edit/main/content',
       links: [{
         icon: 'i-lucide-star',
         label: 'Star on GitHub',
-        to: 'https://github.com/nuxt/ui',
+        to: 'https://github.com/xiaoLangtou/turborepo-zh-docs',
         target: '_blank'
       }, {
         icon: 'i-lucide-book-open',
-        label: 'Nuxt UI docs',
-        to: 'https://ui4.nuxt.com/docs/getting-started/installation/nuxt',
+        label: 'Turborepo 官网',
+        to: 'https://turborepo.com',
         target: '_blank'
       }]
     }

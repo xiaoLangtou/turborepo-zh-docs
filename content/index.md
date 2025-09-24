@@ -1,7 +1,7 @@
 ---
 seo:
-  title: Nuxt Docs Template
-  description: Create stunning, fast and SEO-optimized documentation sites with Nuxt UI.
+  title: Turborepo 中文文档
+  description: 高性能的 JavaScript 和 TypeScript 项目构建系统，专为 monorepo 设计。
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
@@ -12,10 +12,10 @@ orientation: horizontal
 :hero-background
 
 #title
-Ship Beautiful [Documentation]{.text-primary}.
+高性能的 [Monorepo]{.text-primary} 构建系统
 
 #description
-Build professional documentation with Nuxt UI's powerful components, enhanced typography, and seamless Nuxt Content integration. The same system trusted by the entire [Nuxt ecosystem](https://nuxt.com).
+Turborepo 是一个高性能的构建系统，专为 JavaScript 和 TypeScript 代码库设计。通过智能缓存、并行执行和增量构建，让你的 monorepo 构建速度提升 85%。
 
 #links
   :::u-button
@@ -24,7 +24,7 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
   size: xl
   trailing-icon: i-lucide-arrow-right
   ---
-  Get started
+  开始使用
   :::
 
   :::u-button
@@ -33,47 +33,59 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
   color: neutral
   variant: outline
   size: xl
-  to: https://github.com/nuxt-ui-templates/docs
+  to: https://github.com/vercel/turbo
   target: _blank
   ---
-  Use this template
+  GitHub
   :::
 
 #default
   :::prose-pre
   ---
   code: |
-    export default defineNuxtConfig({
-      modules: [
-        '@nuxt/ui',
-        '@nuxt/content',
-        'nuxt-og-image',
-        'nuxt-llms'
-      ],
-
-      css: ['~/assets/css/main.css']
-    })
-  filename: nuxt.config.ts
+    {
+      "$schema": "https://turbo.build/schema.json",
+      "tasks": {
+        "build": {
+          "dependsOn": ["^build"],
+          "outputs": ["dist/**"]
+        },
+        "test": {
+          "dependsOn": ["build"]
+        },
+        "dev": {
+          "cache": false,
+          "persistent": true
+        }
+      }
+    }
+  filename: turbo.json
   ---
 
-  ```ts [nuxt.config.ts]
-  export default defineNuxtConfig({
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/content',
-      'nuxt-og-image',
-      'nuxt-llms'
-    ],
-
-    css: ['~/assets/css/main.css']
-  })
+  ```json [turbo.json]
+  {
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "test": {
+        "dependsOn": ["build"]
+      },
+      "dev": {
+        "cache": false,
+        "persistent": true
+      }
+    }
+  }
   ```
   :::
 ::
 
 ::u-page-section{class="dark:bg-neutral-950"}
 #title
-Powered by Nuxt UI components
+为什么选择 Turborepo
 
 #links
   :::u-button
@@ -81,152 +93,23 @@ Powered by Nuxt UI components
   color: neutral
   size: lg
   target: _blank
-  to: https://ui4.nuxt.com/docs/getting-started/installation/nuxt
+  to: /getting-started/installation
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  Explore Nuxt UI
+  立即开始
   :::
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-palette
+  icon: i-lucide-zap
   ---
   #title
-  100+ UI Components
+  极速构建
 
   #description
-  Access the complete Nuxt UI component library. From badges to modals, everything styled and accessible out of the box.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-type
-  ---
-  #title
-  Beautiful Typography
-
-  #description
-  Pre-styled prose components with perfect visual harmony. No need for @tailwindcss/typography - get precise control over every element.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-layers
-  ---
-  #title
-  Rich Prose Components
-
-  #description
-  Accordions, cards, callouts, tabs, steps, code blocks, and more - all provided by Nuxt UI for interactive documentation.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-search
-  ---
-  #title
-  Built-in Search
-
-  #description
-  Full-text search with ContentSearch component. No need for Algolia - instant, relevant results with keyboard shortcuts (⌘K).
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-navigation
-  ---
-  #title
-  Smart Navigation
-
-  #description
-  Auto-generated navigation with ContentNavigation and ContentToc components. Sticky table of contents and prev/next links.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-moon
-  ---
-  #title
-  Dark Mode Ready
-
-  #description
-  Automatic theme switching with smooth transitions. Respects system preferences and remembers user choice.
-  :::
-::
-
-::u-page-section{class="dark:bg-neutral-950"}
-#title
-Enhanced with Nuxt Content
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  target: _blank
-  to: https://content.nuxt.com/docs/getting-started/installation
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  Explore Nuxt Content
-  :::
-
-#features
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-markdown
-  ---
-  #title
-  MDC Enhanced Markdown
-
-  #description
-  Write in Markdown while embedding Vue components. Seamlessly integrate interactive elements in your content.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-text
-  ---
-  #title
-  File-based Routing
-
-  #description
-  Organize content in folders and files. Your documentation structure automatically becomes your navigation.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-code
-  ---
-  #title
-  Syntax Highlighting
-
-  #description
-  Beautiful code blocks with language detection, line numbers, and copy buttons. Support for 100+ languages.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-database
-  ---
-  #title
-  Content Database
-
-  #description
-  Query your content with a MongoDB-like API. Filter, sort, and search through your documentation programmatically.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-code
-  ---
-  #title
-  Frontmatter Support
-
-  #description
-  Add metadata to your content files. Define SEO tags, navigation properties, and custom fields.
+  通过智能缓存和并行执行，Turborepo 可以将构建时间减少高达 85%，让你的开发流程更加高效。
   :::
 
   :::u-page-feature
@@ -234,10 +117,139 @@ Enhanced with Nuxt Content
   icon: i-lucide-git-branch
   ---
   #title
-  Version Control
+  增量构建
 
   #description
-  Content lives in your repository. Branch, review, and deploy documentation alongside your code.
+  只构建发生变化的包和依赖它们的包，避免不必要的重复工作，节省宝贵的开发时间。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-layers
+  ---
+  #title
+  任务编排
+
+  #description
+  智能的任务依赖管理，确保任务按正确的顺序执行，同时最大化并行处理能力。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-cloud
+  ---
+  #title
+  远程缓存
+
+  #description
+  与团队共享构建缓存，新成员克隆代码后无需重新构建，立即获得最新的构建结果。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-activity
+  ---
+  #title
+  性能监控
+
+  #description
+  内置的性能分析工具，帮助你识别构建瓶颈，优化 monorepo 的整体性能。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-settings
+  ---
+  #title
+  零配置启动
+
+  #description
+  开箱即用的智能默认配置，同时提供灵活的自定义选项，适应各种项目需求。
+  :::
+::
+
+::u-page-section{class="dark:bg-neutral-950"}
+#title
+强大的 Monorepo 工具链
+
+#links
+  :::u-button
+  ---
+  color: neutral
+  size: lg
+  target: _blank
+  to: /core-concepts/remote-caching
+  trailingIcon: i-lucide-arrow-right
+  variant: subtle
+  ---
+  了解核心概念
+  :::
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-lucide-package
+  ---
+  #title
+  包管理器集成
+
+  #description
+  无缝支持 npm、yarn、pnpm 等主流包管理器，自动检测工作区配置，无需额外设置。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-workflow
+  ---
+  #title
+  CI/CD 优化
+
+  #description
+  专为持续集成设计，通过缓存和并行执行大幅减少 CI 构建时间，提升开发团队效率。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-code
+  ---
+  #title
+  代码生成器
+
+  #description
+  内置强大的代码生成工具，快速创建新包、组件和配置文件，保持项目结构一致性。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-filter
+  ---
+  #title
+  智能过滤
+
+  #description
+  基于文件变更智能选择需要运行的任务，支持复杂的过滤条件，精确控制构建范围。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-terminal
+  ---
+  #title
+  丰富的 CLI
+
+  #description
+  功能完整的命令行工具，提供直观的输出和详细的日志，让构建过程清晰可见。
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-shield
+  ---
+  #title
+  类型安全
+
+  #description
+  完整的 TypeScript 支持，配置文件类型检查，确保构建配置的正确性和可维护性。
   :::
 ::
 
@@ -245,16 +257,16 @@ Enhanced with Nuxt Content
   :::u-page-c-t-a
   ---
   links:
-    - label: Start building
-      to: '/getting-started'
+    - label: 开始使用 Turborepo
+      to: '/introduction'
       trailingIcon: i-lucide-arrow-right
-    - label: View on GitHub
-      to: 'https://github.com/nuxt-ui-templates/docs'
+    - label: 查看 GitHub
+      to: 'https://github.com/vercel/turbo'
       target: _blank
       variant: subtle
       icon: i-simple-icons-github
-  title: Ready to build an amazing documentation?
-  description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
+  title: 准备好加速你的 Monorepo 了吗？
+  description: 加入数千名开发者的行列，使用 Turborepo 构建高性能的 JavaScript 和 TypeScript 项目。立即开始，体验极速构建的魅力。
   class: dark:bg-neutral-950
   ---
 

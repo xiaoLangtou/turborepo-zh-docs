@@ -5,7 +5,7 @@
 Use this template to build your own documentation with [Nuxt UI](https://ui.nuxt.com) quickly.
 
 - [Live demo](https://docs-template.nuxt.dev/)
-- [Documentation](https://ui4.nuxt.com/docs/getting-started/installation)
+- [Documentation](https://ui4.nuxt.com/getting-started/installation )
 
 <a href="https://docs-template.nuxt.dev/" target="_blank">
   <picture>

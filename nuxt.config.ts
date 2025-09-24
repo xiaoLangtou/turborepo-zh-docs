@@ -13,10 +13,6 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  ui:{
-    fonts:false
-  },
-
   css: ['~/assets/css/main.css'],
 
   content: {
@@ -27,6 +23,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+
+  ui: {
+    fonts: false
   },
 
   compatibilityDate: '2024-07-11',
