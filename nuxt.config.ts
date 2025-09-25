@@ -31,10 +31,17 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
+  // GitHub Pages 部署配置
+  app: {
+    baseURL: process.env.NODE_ENV === 'production' ? '/turborepo-zh-docs/' : '/',
+    cdnURL: process.env.NODE_ENV === 'production' ? '/turborepo-zh-docs/' : '/'
+  },
+
+  // 静态站点生成配置，用于 GitHub Pages 部署
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/sitemap.xml'
       ],
       crawlLinks: true,
       autoSubfolderIndex: false
@@ -52,6 +59,11 @@ export default defineNuxtConfig({
 
   icon: {
     provider: 'iconify'
+  },
+
+  // GitHub Pages 静态生成配置
+  experimental: {
+    payloadExtraction: false
   },
 
   llms: {
