@@ -14,22 +14,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      # Setup pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      
-      # Install dependencies
-      - name: Install dependencies
-        run: pnpm install
-      
-      # Build with Nuxt
-      - name: Build with Nuxt
-        run: pnpm run build
-        env:
-          NODE_ENV: production
-          NUXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+      # Pick your own package manager and build script
+      - run: npm install
+      - run: npx nuxt build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
